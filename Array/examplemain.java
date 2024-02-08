@@ -4,6 +4,7 @@ public class examplemain {
         example obj = new example();
         obj.method();
         //comment
+        //comment
     }
     
 }
