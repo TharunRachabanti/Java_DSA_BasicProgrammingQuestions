@@ -5,6 +5,7 @@ public class examplemain {
         obj.method();
         //comment
         //comment
+        //comment
     }
     
 }
