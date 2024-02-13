@@ -23,7 +23,27 @@ public class SingleLinkedListMain {
 		System.out.println("\nSearching the node having value 500...");
 		obj.searchNode(500);
 
-        
+        System.out.println();
+        System.out.println("\n\nDeleting the node having location = 0: ");
+        obj.deletionOfNode(0);
+        obj.traverseLinkedList();
+
+        System.out.println();
+        System.out.println("\n\nDeleting the node having location = 2: ");
+        obj.deletionOfNode(2);
+        obj.traverseLinkedList();
+
+        System.out.println();
+        System.out.println("\n\nDeleting the node having location = 100: ");
+        obj.deletionOfNode(100);
+        obj.traverseLinkedList();
+
+        System.out.println();
+        System.out.println("After deleting whole linkedlist");
+        obj.deleteLinkedList();
+		obj.traverseLinkedList();
+
+
 
     }
 

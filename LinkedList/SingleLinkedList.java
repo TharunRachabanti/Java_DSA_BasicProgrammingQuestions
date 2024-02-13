@@ -85,6 +85,7 @@ public class SingleLinkedList {
 	public void traverseLinkedList() {
         if(!existsLinkedList()){
             System.out.println("The linked list does not exist!!");
+            return;
         }
         else{
             SingleNode tempNode = head;
@@ -114,6 +115,54 @@ public class SingleLinkedList {
         System.out.print("Node not found!! \n");
 		return false;
     }
+
+    
+	//Deletes a node having a given value
+	public void deletionOfNode(int location) {
+        if (!existsLinkedList()) {
+			System.out.println("The linked list does not exist!!");// Linked List does not exists
+			return;
+		} else if (location == 0) { // we want to delete first element
+			head = head.getNext();
+			setSize(getSize()-1);
+			if(getSize() == 0) { // if there are no more nodes in this list
+				tail = null;
+			}	
+		}else if (location >= getSize()){ //If location is not in range or equal, then delete last node
+			SingleNode tempNode = head;
+			for (int i = 0; i < size - 1; i++) {
+				tempNode = tempNode.getNext(); //temp node points to 2nd last node
+			}
+			if (tempNode == head) { //if this is the only element in the list
+				tail = head = null;
+				setSize(getSize()-1);
+				return;
+			}
+			tempNode.setNext(null); 
+			tail= tempNode;
+			setSize(getSize()-1);
+			
+		}else { //if any inside node is to be deleted
+			SingleNode tempNode = head;
+			for (int i = 0; i < location - 1; i++) {
+				tempNode = tempNode.getNext(); // we need to traverse till we find the location
+			}	
+			tempNode.setNext(tempNode.getNext().getNext()); // delete the required node
+			setSize(getSize()-1);
+		}//end of else	
+		
+	}//end of method
+	
+
+
+
+    //Deletes entire Linked List
+	public void deleteLinkedList() {
+		System.out.println("\n\nDeleting Linked List...");
+		head = null;
+		tail = null;
+		System.out.println("Linked List deleted successfully !");
+	}
 
    
     
